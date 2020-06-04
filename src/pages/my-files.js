@@ -1,34 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/navbar"
+import Layout from "../components/layout"
+import Container from "../components/container"
 
 export default function MyFiles({ data }) {
   console.log(data)
   return (
     <Layout>
-      <div>
-        <h1>My Site's Files</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>relativePath</th>
-              <th>prettySize</th>
-              <th>extension</th>
-              <th>birthTime</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.allFile.edges.map(({ node }, index) => (
-              <tr key={index}>
-                <td>{node.relativePath}</td>
-                <td>{node.prettySize}</td>
-                <td>{node.extension}</td>
-                <td>{node.birthTime}</td>
+      <Container>
+        <div>
+          <h1>My Site's Files</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>relativePath</th>
+                <th>prettySize</th>
+                <th>extension</th>
+                <th>birthTime</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {data.allFile.edges.map(({ node }, index) => (
+                <tr key={index}>
+                  <td>{node.relativePath}</td>
+                  <td>{node.prettySize}</td>
+                  <td>{node.extension}</td>
+                  <td>{node.birthTime}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Container>
     </Layout>
   )
 }

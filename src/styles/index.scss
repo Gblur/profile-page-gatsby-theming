@@ -1,19 +1,38 @@
-@tailwind base;
+// @tailwind base;
+//
+// body {
+//   background-color: rgba(122, 122, 122, 0.5);
+// }
+// h1 {
+//   font-size: xx-large;
+// }
+// a {
+//   font-size: medium;
+//   font-family: Arial, Helvetica;
+//   color: rgba(255, 255, 255, 0.6);
+// }
+//
+// @tailwind components;
+//
+// @tailwind utilities;
+
+/* Here we can add our own utilities or custom CSS */
 
 body {
-  background-color: rgba(122, 122, 122, 0.5);
+  //  background-color: rgba(48, 26, 247, 0.801);
+  background-image: url("../images/cool-background.png");
+  background-size: cover;
 }
+
 h1 {
-  font-size: xx-large;
+  font-size: 3em;
+  color: rgba(73, 70, 70, 0.74);
 }
 a {
-  font-size: medium;
+  font-size: 1.5em;
   font-family: Arial, Helvetica;
   color: rgba(255, 255, 255, 0.6);
 }
-
-@tailwind components;
-
-@tailwind utilities;
-
-/* Here we can add our own utilities or custom CSS */
+p {
+  font-size: 1.5em;
+}
