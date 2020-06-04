@@ -8,8 +8,9 @@ module.exports = {
   siteMetadata: {
     title: `Title from siteMetadata`,
   },
-
   plugins: [
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,14 +18,17 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-emotion`,
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-sass`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        postCssPlugins: [require("tailwindcss")],
       },
     },
+    // {
+    // resolve: `gatsby-plugin-typography`,
+    // options: {
+    // pathToConfigModule: `src/utils/typography`,
+    // },
+    // },
   ],
 }

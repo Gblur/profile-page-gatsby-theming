@@ -1,7 +1,9 @@
 import Typography from "typography"
 import kirkhamTheme from "typography-theme-kirkham"
+import fairy from "typography-theme-fairy-gates"
 
-const typography = new Typography(kirkhamTheme)
+const fairytheme = new Typography(fairy)
+const kirkham = new Typography(kirkhamTheme)
 
-export const rhythm = typography.rhythm
-export default typography
+export const rhythm = kirkhamTheme.rhythm
+export default fairytheme
