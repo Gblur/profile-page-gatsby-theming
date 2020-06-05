@@ -1,9 +1,26 @@
 import React from "react"
 import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
+import Container from "../components/container"
 
 export default function FormInput() {
   return (
-    <Form style={{ margin: "0px auto", maxWidth: "600px" }}>
+    <Form
+      method="post"
+      action="#"
+      style={{
+        margin: "0px auto",
+        maxWidth: "800px",
+        border: "2px solid gray",
+        borderRadius: "5px",
+        padding: "10px",
+        backgroundColor: "rgba(255,255,255,0.8)",
+      }}
+    >
+      <h1 style={{ textAlign: "center", borderBottom: "3px solid gray" }}>
+        Contact Form
+      </h1>
+
       <Form.Group controlId="formGroupEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
@@ -20,6 +37,14 @@ export default function FormInput() {
           aria-label="With textarea"
         />
       </Form.Group>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <Button size="lg" style={{ backgroundColor: "red" }} type="reset">
+          Reset
+        </Button>
+        <Button size="lg" type="submit">
+          Send
+        </Button>
+      </div>
     </Form>
   )
 }

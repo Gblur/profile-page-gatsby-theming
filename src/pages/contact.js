@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import FormInput from "../components/inputForm"
 

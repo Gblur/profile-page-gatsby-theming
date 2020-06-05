@@ -7,6 +7,7 @@ import { graphql } from "gatsby"
 import { ParallaxProvider } from "react-scroll-parallax"
 
 export default function Home({ data }) {
+  console.log(data)
   return (
     <ParallaxProvider>
       <Layout>
@@ -16,6 +17,7 @@ export default function Home({ data }) {
               <h1>{node.frontmatter.title}</h1>
               <p>{node.frontmatter.date}</p>
               {node.excerpt}
+              <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
             </div>
           ))}
         </Container>
@@ -34,6 +36,7 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
           }
           excerpt
+          html
         }
       }
     }
