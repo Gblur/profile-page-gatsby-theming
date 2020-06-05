@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  flex-shrink: 1;
+  gap: 20px;
+  margin: 0px auto;
+}

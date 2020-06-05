@@ -1,12 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
+import layoutStyle from "../styles/layout.module.scss"
+
 import Header from "../components/header"
 
-export default function Layout({ children }) {
+const Layout = props => {
   return (
-    <div>
+    <div id={props.id}>
       <Header />
-      {children}
+      <div className={layoutStyle.layout}>{props.children}</div>
     </div>
   )
 }
+export default Layout

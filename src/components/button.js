@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button"
 
 const ButtonThing = props => {
   return (
-    <Button {...props} size="lg" style={{ borderRadius: "5%" }}>
+    <Button {...props} size="lg" style={({ ...props }, { borderRadius: "10em" })}>
       {props.children}
     </Button>
   )

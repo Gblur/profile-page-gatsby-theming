@@ -18,9 +18,8 @@ export default function Contact() {
   )
   return (
     <Layout>
-      <div>
-        <FormInput />
-      </div>
+      <div></div>
+      <FormInput />
     </Layout>
   )
 }

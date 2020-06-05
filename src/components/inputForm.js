@@ -1,6 +1,6 @@
 import React from "react"
 import Form from "react-bootstrap/Form"
-import Button from "react-bootstrap/Button"
+import ButtonThing from "../components/button"
 
 export default function FormInput() {
   return (
@@ -8,7 +8,7 @@ export default function FormInput() {
       method="post"
       action="#"
       style={{
-        margin: "0px auto",
+        margin: "0px 10px",
         maxWidth: "800px",
         border: "2px solid gray",
         borderRadius: "5px",
@@ -37,12 +37,10 @@ export default function FormInput() {
         />
       </Form.Group>
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <Button size="lg" style={{ backgroundColor: "red" }} type="reset">
+        <ButtonThing style={{ backgroundColor: "red" }} type="reset">
           Reset
-        </Button>
-        <Button size="lg" type="submit">
-          Send
-        </Button>
+        </ButtonThing>
+        <ButtonThing type="submit">Send</ButtonThing>
       </div>
     </Form>
   )
