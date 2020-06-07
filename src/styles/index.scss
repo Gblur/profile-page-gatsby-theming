@@ -37,9 +37,43 @@ p {
   font-size: 1.5em;
 }
 
-.banner {
+.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.stripes-50 {
+  position: relative;
+  height: 100vh;
+  background-image: url(../images/Stripes_50.svg);
+  background-size: cover;
+  background-position: left;
+  z-index: -100;
+}
+.circles-75 {
+  position: relative;
+  height: 100vh;
+  background-image: url(../images/Circles_future_75.svg);
+  background-size: cover;
+  background-position: top;
+  z-index: -99;
+}
+.stripes-100 {
+  position: relative;
+  height: 100vh;
+  background-image: url(../images/Stripes_50.svg);
+  background-size: cover;
+  background-position: right;
+  z-index: -99;
+}
+
+// .banner-images {
+//   background-image: url(../images/Stripes_50.svg);
+//   height: 100vh;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 1;
+// }
