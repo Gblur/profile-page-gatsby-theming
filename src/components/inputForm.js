@@ -8,12 +8,10 @@ export default function FormInput() {
       method="post"
       action="#"
       style={{
-        margin: "0px 10px",
-        maxWidth: "800px",
-        border: "2px solid gray",
+        width: "50%",
         borderRadius: "5px",
         padding: "10px",
-        backgroundColor: "rgba(255,255,255,0.8)",
+        backgroundColor: "rgba(255, 255, 255, 0.281)",
       }}
     >
       <h1 style={{ textAlign: "center", borderBottom: "3px solid gray" }}>
