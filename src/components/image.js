@@ -25,9 +25,16 @@ const ImagesQuery = props => {
   console.log(data)
 
   const imageData = data.allImageSharp.edges.map(edge => {
-    return <img id={edge.node.id} src={edge.node.resize.src} onClick={() => { 
-      
-    }}/>
+    return (
+      <Container>
+        <h1>Photo Title</h1>
+        <p>
+          so much text that it should expend the border if you dont wrap it
+          corectly
+        </p>
+        <img key={edge.node.id} src={edge.node.resize.src} onClick={() => {}} />
+      </Container>
+    )
   })
   return imageData
 }

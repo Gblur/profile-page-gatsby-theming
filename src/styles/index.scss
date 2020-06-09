@@ -50,10 +50,10 @@ p {
 
 .intro {
   display: flex;
-  width: 33%;
+  max-width: 33%;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   border-bottom: 3px solid white;
   border-radius: 6px;
 }

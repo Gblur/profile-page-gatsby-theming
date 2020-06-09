@@ -12,11 +12,9 @@ import svgBannerData from "../constants/svgBannerdata.js"
 import ImageQuery from "../components/image"
 
 export default function Home({ data }) {
-  console.log(svgBannerData[0].layer)
-
   return (
     <ParallaxProvider>
-      <div>
+      <div id="main">
         <div
           className="title"
           style={{
@@ -26,7 +24,7 @@ export default function Home({ data }) {
             zIndex: "2",
           }}
         >
-          <img src={myLogo} crop="auto" />
+          <img src={myLogo} />
           <h1>Welcome</h1>
           <p>please feel free to visit this site </p>
           <ButtonThing
@@ -55,16 +53,10 @@ export default function Home({ data }) {
               in Berlin where I learned a alot of rails
             </p>
           </div>
-          <LayoutGrid>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
-              <Container>
-                <div key={node.id}>
-                  <h1>{node.frontmatter.title}</h1>
-                  <p>{node.frontmatter.date}</p>
-                </div>
-              </Container>
-            ))}
-          </LayoutGrid>
+          <div className="filler" style={{ height: "500px" }}></div>
+          <div className="intro" style={{ alignSelf: "center" }}>
+            <h1>Portfolio</h1>
+          </div>
           <LayoutGrid>
             <ImageQuery />
           </LayoutGrid>
