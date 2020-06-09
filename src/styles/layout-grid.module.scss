@@ -2,8 +2,8 @@
   position: relative;
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: 33% 1fr;
-  grid-template-rows: 1fr minmax(auto, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   flex-shrink: 1;
   gap: 20px;
   margin: 0px auto;

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Container from "../components/container"
 
 const ImagesQuery = props => {
   const data = useStaticQuery(graphql`
@@ -9,7 +10,7 @@ const ImagesQuery = props => {
         edges {
           node {
             id
-            resize(width: 160, height: 90, grayscale: false) {
+            resize(width: 300, height: 168, grayscale: false) {
               src
             }
             fixed(fit: COVER, height: 200, width: 200) {
@@ -23,13 +24,12 @@ const ImagesQuery = props => {
 
   console.log(data)
 
-  return (
-    <div>
-      {data.allImageSharp.edges.map(edge => {
-        return <img id={edge.node.id} src={edge.node.resize.src} />
-      })}
-    </div>
-  )
+  const imageData = data.allImageSharp.edges.map(edge => {
+    return <img id={edge.node.id} src={edge.node.resize.src} onClick={() => { 
+      
+    }}/>
+  })
+  return imageData
 }
 //
 export default ImagesQuery
