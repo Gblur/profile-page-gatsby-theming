@@ -20,7 +20,7 @@
 
 body {
   //  background-color: rgba(48, 26, 247, 0.801);
-  background-image: url("../images/Circles.svg");
+  background-image: url("../svgImages/Circles.svg");
   background-size: cover;
 }
 
@@ -57,37 +57,3 @@ p {
   border-bottom: 3px solid white;
   border-radius: 6px;
 }
-
-.stripes-50 {
-  position: relative;
-  height: 100vh;
-  background-image: url(../images/Stripes_50.svg);
-  background-size: cover;
-  background-position: left;
-  z-index: -100;
-}
-.circles-75 {
-  position: relative;
-  height: 100vh;
-  background-image: url(../images/Circles_future_75.svg);
-  background-size: cover;
-  background-position: top;
-  z-index: -99;
-}
-.stripes-100 {
-  position: relative;
-  height: 100vh;
-  background-image: url(../images/Stripes_50.svg);
-  background-size: cover;
-  background-position: right;
-  z-index: -99;
-}
-
-// .banner-images {
-//   background-image: url(../images/Stripes_50.svg);
-//   height: 100vh;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   z-index: 1;
-// }

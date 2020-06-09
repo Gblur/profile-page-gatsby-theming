@@ -5,20 +5,15 @@ import Layout from "../components/layout"
 import LayoutGrid from "../components/layoutGrid"
 import { graphql } from "gatsby"
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax"
-import ParallaxImage from "../components/parallax"
 import Footer from "../components/footer"
 import ButtonThing from "../components/button"
+import myLogo from "../svgImages/Logo.svg"
+import svgBannerData from "../constants/svgBannerdata.js"
 import ImageQuery from "../components/image"
-import myLogo from "../images/Logo.svg"
-
-const yOffsets = {
-  stripes50: [-10, 10],
-  stripes100: [-70, 20],
-  circles75: [-75, 50],
-}
 
 export default function Home({ data }) {
-  console.log(data)
+  console.log(svgBannerData[0].layer)
+
   return (
     <ParallaxProvider>
       <div>
@@ -44,16 +39,14 @@ export default function Home({ data }) {
             Get Started
           </ButtonThing>
         </div>
-        <ParallaxImage yOffsets={yOffsets.stripes50}>
-          <div className="stripes-50" />
-        </ParallaxImage>
-        <ParallaxImage yOffsets={yOffsets.circles75}>
-          <div className="circles-75" />
-        </ParallaxImage>
-        <ParallaxImage yOffsets={yOffsets.stripes100}>
-          <div className="stripes-100" />
-        </ParallaxImage>
-        <Layout>
+        <ParallaxBanner
+          className="your-class"
+          layers={svgBannerData}
+          style={{
+            height: "100vh",
+          }}
+        ></ParallaxBanner>
+        <Layout id="ContainerId">
           <div className="intro">
             <h1>Rails and React</h1>
             <p>
@@ -62,16 +55,18 @@ export default function Home({ data }) {
               in Berlin where I learned a alot of rails
             </p>
           </div>
-          <LayoutGrid id="ContainerId">
+          <LayoutGrid>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <Container>
                 <div key={node.id}>
                   <h1>{node.frontmatter.title}</h1>
                   <p>{node.frontmatter.date}</p>
-                  <div dangerouslySetInnerHTML={{ __html: node.html }}></div>
                 </div>
               </Container>
             ))}
+          </LayoutGrid>
+          <LayoutGrid>
+            <ImageQuery />
           </LayoutGrid>
         </Layout>
         <Footer />

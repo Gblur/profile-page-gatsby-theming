@@ -2,44 +2,34 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-// const ImagesQuery = props => {
-//   const data = useStaticQuery(graphql`
-//     query {
-//       file(relativePath: { eq: "Logo.svg" }) {
-//         childImageSharp {
-//           # Specify a fluid image and fragment
-//           # The default maxWidth is 800 pixels
-//           fluid {
-//             ...GatsbyImageSharpFluid_tracedSVG
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   console.log(data)
+const ImagesQuery = props => {
+  const data = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        edges {
+          node {
+            id
+            resize(width: 160, height: 90, grayscale: false) {
+              src
+            }
+            fixed(fit: COVER, height: 200, width: 200) {
+              src
+            }
+          }
+        }
+      }
+    }
+  `)
 
-//   return (
-//     <div>
-//       <Img
-//         fluid={data.file.childImageSharp.fluid}
-//         alt="Cat taking up an entire chair"
-//         fadeIn={false}
-//         className="customImg"
-//         onLoad={() => {
-//           // do loading stuff
-//         }}
-//         onStartLoad={({ wasCached }) => {
-//           // do stuff on start of loading
-//           // optionally with the wasCached boolean parameter
-//         }}
-//         onError={error => {
-//           // do error stuff
-//         }}
-//         Tag="custom-image"
-//         loading="eager"
-//       />
-//     </div>
-//   )
-// }
+  console.log(data)
 
-// export default ImagesQuery
+  return (
+    <div>
+      {data.allImageSharp.edges.map(edge => {
+        return <img id={edge.node.id} src={edge.node.resize.src} />
+      })}
+    </div>
+  )
+}
+//
+export default ImagesQuery
