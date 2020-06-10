@@ -1,17 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import "../styles/index.scss"
+import "../styles/layout-grid.scss"
 import Container from "../components/container"
 import Layout from "../components/layout"
 import LayoutGrid from "../components/layoutGrid"
-import { graphql } from "gatsby"
-import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax"
 import Footer from "../components/footer"
 import ButtonThing from "../components/button"
+import { graphql, useStaticQuery } from "gatsby"
+import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax"
 import myLogo from "../svgImages/Logo.svg"
 import svgBannerData from "../constants/svgBannerdata.js"
 import ImageQuery from "../components/image"
 
 export default function Home({ data }) {
+  const { selectedimage, setSelectedimage } = useState(
+    data.ImpalaImage.childImageSharp.fluid.src
+  )
+  console.log(selectedimage)
+
   return (
     <ParallaxProvider>
       <div id="main">
@@ -47,18 +53,43 @@ export default function Home({ data }) {
         <Layout id="ContainerId">
           <div className="intro">
             <h1>Rails and React</h1>
-            <p>
+            <h3>
               Here are some examples I did in the last time for my personal
               training and also for the class I visited from January until march
               in Berlin where I learned a alot of rails
-            </p>
+            </h3>
           </div>
           <div className="filler" style={{ height: "500px" }}></div>
           <div className="intro" style={{ alignSelf: "center" }}>
             <h1>Portfolio</h1>
           </div>
           <LayoutGrid>
-            <ImageQuery />
+            <div className="text">
+              <h1>
+                Lets type a alot of text Here to make sure everything fits
+                correctly
+              </h1>
+              <h3>
+                Here are some examples I did in the last time for my personal
+                training and also for the class I visited from January until
+                march in Berlin where I learned a alot of rails
+              </h3>
+            </div>
+            <ImageQuery className="item-main" fluid={selectedimage} />
+            {data.allFile.edges.map((edge, index) => {
+              return (
+                <ImageQuery
+                  className={`item-${index + 1}`}
+                  id={edge.node.childImageSharp.id}
+                  fluid={edge.node.childImageSharp.fluid}
+                  onClick={() => {
+                    if (selectedimage) {
+                      setSelectedimage(edge.node.childImageSharp.fluid.src)
+                    }
+                  }}
+                />
+              )
+            })}
           </LayoutGrid>
         </Layout>
         <Footer />
@@ -67,19 +98,20 @@ export default function Home({ data }) {
   )
 }
 
-export const query = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+export const query = useStaticQuery(graphql`
+  {
+    allFile(sort: { fields: name }) {
       edges {
         node {
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
+          id
+          childImageSharp {
+            id
+            fluid(maxHeight: 480, maxWidth: 640) {
+              ...GatsbyImageSharpFluid
+            }
           }
-          excerpt
-          html
         }
       }
     }
   }
-`
+`)

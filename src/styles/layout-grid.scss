@@ -1,0 +1,37 @@
+.item-main {
+  grid-area: item-main;
+}
+
+.item-1 {
+  grid-area: item1;
+}
+.item-2 {
+  grid-area: item2;
+}
+.item-3 {
+  grid-area: item3;
+}
+.item-4 {
+  grid-area: item4;
+}
+
+.text {
+  grid-area: header;
+}
+
+.layout-grid {
+  position: relative;
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header item1 item1"
+    "header item1 item1"
+    "item2 item3 item4";
+
+  gap: 20px;
+  flex-grow: 1;
+  margin: 20px auto;
+  z-index: 100;
+}
