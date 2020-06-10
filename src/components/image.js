@@ -10,11 +10,18 @@ const ImagesQuery = props => {
         edges {
           node {
             id
-            resize(width: 300, height: 168, grayscale: false) {
+            resize(width: 300, height: 168, grayscale: true) {
               src
             }
-            fixed(fit: COVER, height: 200, width: 200) {
+            fluid(
+              cropFocus: CENTER
+              maxHeight: 480
+              maxWidth: 640
+              grayscale: true
+              srcSetBreakpoints: [200, 320, 540]
+            ) {
               src
+              originalName
             }
           }
         }
@@ -27,12 +34,16 @@ const ImagesQuery = props => {
   const imageData = data.allImageSharp.edges.map(edge => {
     return (
       <Container>
-        <h1>Photo Title</h1>
+        <h2>{edge.node.fluid.originalName.split([".jpg"])}</h2>
         <p>
           so much text that it should expend the border if you dont wrap it
           corectly
         </p>
-        <img key={edge.node.id} src={edge.node.resize.src} onClick={() => {}} />
+        <Img
+          key={edge.node.id}
+          fluid={edge.node.fluid.src}
+          onClick={() => {}}
+        />
       </Container>
     )
   })
