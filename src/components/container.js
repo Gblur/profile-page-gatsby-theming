@@ -5,9 +5,8 @@ export default function Container({ children }) {
   return (
     <div
       style={{
-        margin: `3rem auto`,
         width: "100%",
-        maxWidth: "800px",
+        height: "100%",
       }}
       className={containerStyles.container}
     >

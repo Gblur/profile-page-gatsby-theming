@@ -1,13 +1,19 @@
-import Circles_future_75 from "../svgImages/Circles_future_75.svg"
-import stripes50 from "../svgImages/Stripes_50.svg"
+import circle_20 from "./bannerImages/circle_20.svg"
+import circle_30 from "./bannerImages/circle_30.svg"
+import stripes from "./bannerImages/stripes.svg"
 
 export default [
   {
-    image: stripes50,
-    amount: 0.1,
+    image: circle_30,
+    amount: 0.18,
   },
   {
-    image: Circles_future_75,
-    amount: 0.4,
+    image: circle_20,
+    amount: 0.37,
+  },
+
+  {
+    image: stripes,
+    amount: 0.1,
   },
 ]

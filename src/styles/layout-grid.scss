@@ -17,21 +17,45 @@
 
 .text {
   grid-area: header;
+  margin: 40px 0px;
+  border-bottom: 5px solid white;
+  border-radius: 5px;
+}
+
+.image-text {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  grid-area: imageText;
 }
 
 .layout-grid {
   position: relative;
   display: grid;
   max-width: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 60%;
   grid-template-rows: auto;
   grid-template-areas:
-    "header item1 item1"
-    "header item1 item1"
-    "item2 item3 item4";
+    "header header imageText"
+    "item1 item2 item-main"
+    "item3 item4 item-main";
 
   gap: 20px;
   flex-grow: 1;
   margin: 20px auto;
   z-index: 100;
+}
+
+@media (max-width: 1100px) {
+  .layout-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "imageText imageText"
+      "item-main item-main"
+      "item3 item4"
+      "item1 item2";
+  }
 }
