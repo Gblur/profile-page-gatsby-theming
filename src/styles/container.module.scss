@@ -7,7 +7,15 @@
   border-radius: 13px;
   border-top: 20px solid rgba(25, 0, 95, 0.425);
   box-shadow: 0px 0px 18px;
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   h1 {
     padding-top: 20px;
   }
+}
+
+.container:hover {
+  transition: transform 0.4s;
+  -webkit-transform: scale(1.1);
 }

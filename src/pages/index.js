@@ -3,6 +3,8 @@ import "../styles/index.scss"
 import "../styles/layout-grid.scss"
 import Layout from "../components/layout"
 import LayoutGrid from "../components/layoutGrid"
+import Container from "../components/container"
+import portfolioImages from "../constants/imageData/portfolio.js"
 import Footer from "../components/footer"
 import ButtonThing from "../components/button"
 import { graphql, useStaticQuery } from "gatsby"
@@ -11,30 +13,14 @@ import myLogo from "../svgImages/Logo_optimized.svg"
 import svgBannerData from "../constants/svgBannerdata.js"
 import ImageQuery from "../components/image"
 import cardModel from "../models/card"
+import Button from "react-bootstrap/Button"
 
-export default function Home() {
+export default function Home({ data }) {
   const [index, setIndex] = useState(0)
-  const [fadeIn, setfadeIn] = useState(false)
 
-  const { allFile } = useStaticQuery(graphql`
-    {
-      allFile(sort: { fields: name }) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              id
-              fluid(maxWidth: 1120) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  const videoMarkdown = data
 
-  const { node } = allFile.edges[index]
+  const node = portfolioImages[index]
   const cardInfo = cardModel[index]
 
   return (
@@ -85,9 +71,7 @@ export default function Home() {
           </div>
           <LayoutGrid>
             <div className="text">
-              <h1>
-                Web Products
-              </h1>
+              <h1>Web Products</h1>
               <h3>
                 Here are some examples I did in the last time for my personal
                 training and also for the class I visited from January until
@@ -97,30 +81,36 @@ export default function Home() {
             <div className="image-text">
               <h1>{cardInfo.title}</h1>
               <p>{cardInfo.description}</p>
+
               <a href={cardInfo.link} target="blank">
-                Go to Project site
+                <Button>Go to Project site</Button>
               </a>
             </div>
             <div className="item-main">
-              <ImageQuery
-                fluid={node.childImageSharp.fluid}
-                fadeIn={fadeIn}
-              ></ImageQuery>
-            </div>
-
-            {allFile.edges.map((edge, index) => {
-              return (
-                <ImageQuery
-                  key={edge.node.id}
-                  className={`item-${index + 1}`}
-                  id={edge.node.childImageSharp.id}
-                  fluid={edge.node.childImageSharp.fluid}
-                  fadeIn={fadeIn}
-                  onClick={() => {
-                    setIndex(index)
-                    setfadeIn(true)
+              {node.id === "configVideo" ? (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: videoMarkdown.markdownRemark.html,
                   }}
                 />
+              ) : (
+                <ImageQuery src={node.image} />
+              )}
+            </div>
+
+            {portfolioImages.map((image, index) => {
+              return (
+                <Container>
+                  <ImageQuery
+                    key={image.id}
+                    className={`item-${index + 1}`}
+                    id={image.image}
+                    src={image.image}
+                    onClick={() => {
+                      setIndex(index)
+                    }}
+                  />
+                </Container>
               )
             })}
           </LayoutGrid>
@@ -130,3 +120,11 @@ export default function Home() {
     </ParallaxProvider>
   )
 }
+
+export const query = graphql`
+  query {
+    markdownRemark(fileAbsolutePath: { regex: "/videos.md/" }) {
+      html
+    }
+  }
+`
