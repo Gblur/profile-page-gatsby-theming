@@ -12,13 +12,12 @@ const ListLink = props => (
 
 export default function Header(props) {
   return (
-    <header className={headerModule.header} style={{ marginBottom: `1.5rem` }}>
+    <header className={headerModule.header}>
       <Link to="/" style={{ textShadow: `none` }}>
         Home
       </Link>
       <ul style={{ listStyle: `none`, float: `right` }}>
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
+        <ListLink to="/impressum/">Impressum</ListLink>
       </ul>
     </header>
   )

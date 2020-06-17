@@ -1,18 +1,26 @@
 import React, { useState } from "react"
+//styles
 import "../styles/index.scss"
 import "../styles/layout-grid.scss"
+//components
 import Layout from "../components/layout"
 import LayoutGrid from "../components/layoutGrid"
 import Container from "../components/container"
-import portfolioImages from "../constants/imageData/portfolio.js"
 import Footer from "../components/footer"
 import ButtonThing from "../components/button"
+import ImageQuery from "../components/image"
+import FormInput from "../components/inputForm"
+//constants
+import portfolioImages from "../constants/imageData/portfolio.js"
+import svgBannerData from "../constants/svgBannerdata.js"
+//query
 import { graphql, useStaticQuery } from "gatsby"
+//banner
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax"
 import myLogo from "../svgImages/Logo_optimized.svg"
-import svgBannerData from "../constants/svgBannerdata.js"
-import ImageQuery from "../components/image"
+//data
 import cardModel from "../models/card"
+//bootstrap
 import Button from "react-bootstrap/Button"
 
 export default function Home({ data }) {
@@ -59,11 +67,10 @@ export default function Home({ data }) {
         <Layout id="ContainerId">
           <div className="intro">
             <h1>Rails and React</h1>
-            <h3>
-              Here are some examples I did in the last time for my personal
-              training and also for the class I visited from January until march
-              in Berlin where I learned a alot of rails
-            </h3>
+            <h4>
+              Fgraphs stands for functional graphics and thats what I expect
+              from software nowadays. So here are the 3 pillars of concept.
+            </h4>
           </div>
           <div className="filler" style={{ height: "500px" }}></div>
           <div className="intro" style={{ alignSelf: "center" }}>
@@ -71,16 +78,16 @@ export default function Home({ data }) {
           </div>
           <LayoutGrid>
             <div className="text">
-              <h1>Web Products</h1>
-              <h3>
+              <h2>Web Products</h2>
+              <h4>
                 Here are some examples I did in the last time for my personal
                 training and also for the class I visited from January until
                 march in Berlin.
-              </h3>
+              </h4>
             </div>
             <div className="image-text">
-              <h1>{cardInfo.title}</h1>
-              <p>{cardInfo.description}</p>
+              <h2>{cardInfo.title}</h2>
+              <h4>{cardInfo.description}</h4>
 
               <a href={cardInfo.link} target="blank">
                 <Button>Go to Project site</Button>
@@ -100,20 +107,23 @@ export default function Home({ data }) {
 
             {portfolioImages.map((image, index) => {
               return (
-                <Container>
-                  <ImageQuery
-                    key={image.id}
-                    className={`item-${index + 1}`}
-                    id={image.image}
-                    src={image.image}
-                    onClick={() => {
-                      setIndex(index)
-                    }}
-                  />
-                </Container>
+                <ImageQuery
+                  key={image.id}
+                  className={`item-${index + 1}`}
+                  id={image.image}
+                  src={image.image}
+                  onClick={() => {
+                    setIndex(index)
+                  }}
+                />
               )
             })}
           </LayoutGrid>
+          <div className="filler" style={{ height: "200px" }}></div>
+          <div className="intro" style={{ alignSelf: "center" }}>
+            <h1>Contact</h1>
+          </div>
+          <FormInput />
         </Layout>
         <Footer />
       </div>

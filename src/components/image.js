@@ -1,12 +1,20 @@
 import React from "react"
 import Img from "gatsby-image"
+import Container from "./container"
 
 const ImagesQuery = props => {
   return (
     <div className={props.className} onClick={props.onClick}>
-      <img style={{ width: "100%" }} key={props.id} src={props.src} {...props}>
-        {props.children}
-      </img>
+      <Container>
+        <img
+          style={{ width: "100%" }}
+          key={props.id}
+          src={props.src}
+          {...props}
+        >
+          {props.children}
+        </img>
+      </Container>
     </div>
   )
 }

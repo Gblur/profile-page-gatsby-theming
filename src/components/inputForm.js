@@ -8,16 +8,13 @@ export default function FormInput() {
       method="post"
       action="#"
       style={{
-        width: "50%",
+        width: "80%",
         borderRadius: "5px",
-        padding: "10px",
-        backgroundColor: "rgba(255, 255, 255, 0.281)",
+        padding: "21px",
+        backgroundColor: "rgba(25, 0, 95, 0.425)",
+        boxShadow: "0px 0px 15px",
       }}
     >
-      <h1 style={{ textAlign: "center", borderBottom: "3px solid gray" }}>
-        Contact Form
-      </h1>
-
       <Form.Group controlId="formGroupEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />

@@ -63,10 +63,16 @@ p {
 
 .intro {
   display: flex;
-  max-width: 33%;
+  max-width: 60%;
+  min-width: 200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid white;
-  border-radius: 6px;
+  text-align: center;
+
+  margin-bottom: 50px;
+  h1 {
+    border-bottom: 3px solid white;
+    border-radius: 6px;
+  }
 }

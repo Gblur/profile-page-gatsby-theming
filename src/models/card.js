@@ -9,7 +9,7 @@ export default [
     title: "Impala Project",
     description:
       "A model I made for a race game when I worked with Unity. There is also a WebGl build where you can use it as an configurable object",
-    link: "/about",
+    link: "/unity",
   },
   {
     title: "Impala Project",
