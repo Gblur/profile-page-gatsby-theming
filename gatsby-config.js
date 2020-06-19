@@ -7,9 +7,7 @@
 const path = require(`path`)
 
 module.exports = {
-  siteMetadata: {
-    title: `Title from siteMetadata`,
-  },
+
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,

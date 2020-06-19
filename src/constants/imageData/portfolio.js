@@ -1,4 +1,4 @@
-import jamin from "../../pngImages/1st_Jamin_Project.png"
+import jamin from "../../pngImages/1st_jamin.png"
 import configurator from "../../pngImages/configurator.webp"
 
 export default [

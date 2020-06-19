@@ -10,6 +10,7 @@ import Footer from "../components/footer"
 import ButtonThing from "../components/button"
 import ImageQuery from "../components/image"
 import FormInput from "../components/inputForm"
+import Cards from "../components/cards"
 //constants
 import portfolioImages from "../constants/imageData/portfolio.js"
 import svgBannerData from "../constants/svgBannerdata.js"
@@ -66,13 +67,14 @@ export default function Home({ data }) {
         </ParallaxBanner>
         <Layout id="ContainerId">
           <div className="intro">
-            <h1>Rails and React</h1>
+            <h1>About</h1>
             <h4>
               Fgraphs stands for functional graphics and thats what I expect
               from software nowadays. So here are the 3 pillars of concept.
             </h4>
           </div>
-          <div className="filler" style={{ height: "500px" }}></div>
+          <Cards />
+          <div className="filler" style={{ height: "100px" }}></div>
           <div className="intro" style={{ alignSelf: "center" }}>
             <h1>Portfolio</h1>
           </div>
@@ -85,7 +87,7 @@ export default function Home({ data }) {
                 march in Berlin.
               </h4>
             </div>
-            <div className="image-text">
+            <div id="image-text">
               <h2>{cardInfo.title}</h2>
               <h4>{cardInfo.description}</h4>
 
@@ -96,6 +98,7 @@ export default function Home({ data }) {
             <div className="item-main">
               {node.id === "configVideo" ? (
                 <div
+                  className="item-main"
                   dangerouslySetInnerHTML={{
                     __html: videoMarkdown.markdownRemark.html,
                   }}
@@ -113,17 +116,15 @@ export default function Home({ data }) {
                   id={image.image}
                   src={image.image}
                   onClick={() => {
+                    document.getElementById("image-text").scrollIntoView({
+                      behavior: "smooth",
+                    })
                     setIndex(index)
                   }}
                 />
               )
             })}
           </LayoutGrid>
-          <div className="filler" style={{ height: "200px" }}></div>
-          <div className="intro" style={{ alignSelf: "center" }}>
-            <h1>Contact</h1>
-          </div>
-          <FormInput />
         </Layout>
         <Footer />
       </div>

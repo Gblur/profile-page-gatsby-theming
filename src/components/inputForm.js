@@ -15,13 +15,13 @@ export default function FormInput() {
         boxShadow: "0px 0px 15px",
       }}
     >
-      <Form.Group controlId="formGroupEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+      <Form.Group controlId="formGroupName">
+        <Form.Label>Name</Form.Label>
+        <Form.Control type="email" placeholder="Enter Name" />
       </Form.Group>
-      <Form.Group controlId="formGroupPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+      <Form.Group controlId="formGroupSubject">
+        <Form.Label>Subject</Form.Label>
+        <Form.Control type="subject" placeholder="Enter Subject" />
       </Form.Group>
       <Form.Group controlId="formGroupMessage">
         <Form.Label>Message</Form.Label>

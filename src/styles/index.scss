@@ -19,15 +19,24 @@
 /* Here we can add our own utilities or custom CSS */
 
 body {
-  //  background-color: rgba(48, 26, 247, 0.801);
-  background-image: url("../svgImages/Circles.svg");
+  background-color: #4abcc5;
+  //background-image: url("../svgImages/Circles.svg");
   background-size: cover;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 h1 {
   font-size: 3em;
   color: rgb(235, 232, 232);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h2 {
+  color: rgba(255, 255, 255, 0.7);
+}
+h4 {
+  color: rgb(63, 63, 63);
 }
 
 a {
