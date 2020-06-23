@@ -9,13 +9,12 @@ import Container from "../components/container"
 import Footer from "../components/footer"
 import ButtonThing from "../components/button"
 import ImageQuery from "../components/image"
-import FormInput from "../components/inputForm"
 import Cards from "../components/cards"
 //constants
 import portfolioImages from "../constants/imageData/portfolio.js"
 import svgBannerData from "../constants/svgBannerdata.js"
 //query
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 //banner
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax"
 import myLogo from "../svgImages/Logo_optimized.svg"
@@ -51,7 +50,7 @@ export default function Home({ data }) {
             }}
           >
             <img src={myLogo} />
-            <h1>Fugitive Graphics</h1>
+            <h1>Florian Gaebler</h1>
             <h2>3D, Game and Web Design </h2>
 
             <ButtonThing
@@ -68,10 +67,7 @@ export default function Home({ data }) {
         <Layout id="ContainerId">
           <div className="intro">
             <h1>About</h1>
-            <h4>
-              Fgraphs stands for functional graphics and thats what I expect
-              from software nowadays. So here are the 3 pillars of concept.
-            </h4>
+            <h4></h4>
           </div>
           <Cards />
           <div className="filler" style={{ height: "100px" }}></div>
@@ -79,21 +75,13 @@ export default function Home({ data }) {
             <h1>Portfolio</h1>
           </div>
           <LayoutGrid>
-            <div className="text">
-              <h2>Web Products</h2>
-              <h4>
-                Here are some examples I did in the last time for my personal
-                training and also for the class I visited from January until
-                march in Berlin.
-              </h4>
-            </div>
             <div id="image-text">
               <h2>{cardInfo.title}</h2>
               <h4>{cardInfo.description}</h4>
 
-              <a href={cardInfo.link} target="blank">
-                <Button>Go to Project site</Button>
-              </a>
+              <ButtonThing href={cardInfo.link} target="blank">
+                Go to Project site
+              </ButtonThing>
             </div>
             <div className="item-main">
               {node.id === "configVideo" ? (

@@ -17,7 +17,9 @@ export default function Header(props) {
         Home
       </Link>
       <ul style={{ listStyle: `none`, float: `right` }}>
-        <ListLink to="/impressum/">Impressum</ListLink>
+        <ListLink style={{ listStyle: "none" }} to="/impressum/">
+          Impressum
+        </ListLink>
       </ul>
     </header>
   )

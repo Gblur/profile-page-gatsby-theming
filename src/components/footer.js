@@ -1,5 +1,6 @@
 import React from "react"
 import footerStyle from "../styles/footer.module.scss"
+import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faLinkedin,
@@ -47,6 +48,7 @@ const Footer = props => {
         ></FontAwesomeIcon>
         <p>2020 Florian Gaebler</p>
       </div>
+      <Link to="/impressum" >Impressum | Datenschutz</Link>
     </div>
   )
 }

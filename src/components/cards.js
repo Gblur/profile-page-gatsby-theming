@@ -15,9 +15,9 @@ const Cards = props => {
   return (
     <Container>
       <Row>
-        <Col xs={12} lg={4}>
+        <Col xs={12} lg={{ number: 4 }}>
           <div className="item">
-            <h2>RESPONSIVE</h2>
+            <h2>FRONT-END</h2>
             <FontAwesomeIcon
               icon={faCode}
               style={{
@@ -26,8 +26,9 @@ const Cards = props => {
               }}
             />
             <p>
-              Apps are cool. Expo is helping me to build some awesome native
-              apps for Android and Mac
+              Despite the fact that I graduated as a full stack developer, my
+              priority is in front end development. Mostly with React.
+              Javascript and C# are my common used languages.
             </p>
           </div>
         </Col>
@@ -42,8 +43,8 @@ const Cards = props => {
               }}
             />
             <p>
-              Apps are cool. Expo is helping me to build some awesome native
-              apps for Android and Mac
+              Since there are more possibilities to develop dynamic pages, this
+              is where I roll and wanna take part in App industries.
             </p>
           </div>
         </Col>
@@ -59,7 +60,7 @@ const Cards = props => {
             />
             <p>
               Apps are cool. Expo is helping me to build some awesome native
-              apps for Android and Mac
+              apps for Android and Mac.
             </p>
           </div>
         </Col>
