@@ -7,12 +7,15 @@
 const path = require(`path`)
 
 module.exports = {
-
   plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -29,11 +32,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: `gatsby-plugin-typescript`,
       options: {
-        postCssPlugins: [require("tailwindcss")],
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
       },
     },
+
     // {
     // resolve: `gatsby-plugin-typography`,
     // options: {

@@ -10,7 +10,7 @@ export default [
   },
   {
     image: circle_20,
-    amount: 0.37,
+    amount: 0.33,
   },
   {
     image: circle_30,

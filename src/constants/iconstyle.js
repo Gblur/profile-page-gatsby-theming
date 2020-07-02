@@ -3,6 +3,6 @@ export default {
   color: {
     native: "#BB342F",
     dynamic: "#DDA448",
-    responsive: "#7A3B69",
+    responsive: "#7A3",
   },
 }

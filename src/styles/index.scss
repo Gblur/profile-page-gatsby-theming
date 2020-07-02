@@ -19,7 +19,9 @@
 /* Here we can add our own utilities or custom CSS */
 
 body {
-  background-color: #4abcc5;
+  // background-color: #4abcc5;
+  background-color: #252525;
+
   //background-image: url("../svgImages/Circles.svg");
   background-size: cover;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -37,31 +39,31 @@ h2 {
 }
 
 h3 {
-  color: rgb(63, 63, 63);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 h4 {
-  color: rgb(39, 39, 39);
+  color: rgb(153, 153, 153);
 }
 
 a {
-  font-size: 1.2em;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1em;
+  color: var(--color-text);
 }
 
 p {
   font-size: 1.1em;
-  color: rgb(39, 39, 39);
+  color: var(--color-text);
+  margin: 0.4em 0px;
 }
 
 .title {
   display: flex;
-  width: 80%;
-  height: 50%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   flex-shrink: 1;
+  text-align: center;
   h1 {
     font-size: 5em;
   }
@@ -78,8 +80,7 @@ p {
 
 .intro {
   display: flex;
-  max-width: 60%;
-  min-width: 200px;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;

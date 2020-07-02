@@ -1,0 +1,14 @@
+.light {
+  --color-text: rgb(58, 58, 58);
+  --color-bg: rgb(0, 80, 185);
+}
+
+.dark {
+  --color-text: rgb(214, 214, 214);
+  --color-bg: rgb(37, 37, 37);
+}
+
+.medium {
+  --color-text: rgba(221, 221, 221, 0.836);
+  --color-bg: rgb(1, 81, 128);
+}

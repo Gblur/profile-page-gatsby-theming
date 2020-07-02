@@ -9,6 +9,7 @@ import {
   faCode,
   faSitemap,
 } from "@fortawesome/free-solid-svg-icons"
+import * as regular from "@fortawesome/free-regular-svg-icons"
 import IconStyle from "../constants/iconstyle.js"
 
 const Cards = props => {
@@ -29,6 +30,8 @@ const Cards = props => {
               Despite the fact that I graduated as a full stack developer, my
               priority is in front end development. Mostly with React.
               Javascript and C# are my common used languages.
+
+
             </p>
           </div>
         </Col>
@@ -36,7 +39,7 @@ const Cards = props => {
           <div className="item">
             <h2>DYNAMIC</h2>
             <FontAwesomeIcon
-              icon={faSitemap}
+              icon={regular.faSurprise}
               style={{
                 fontSize: IconStyle.iconsize,
                 color: IconStyle.color.dynamic,
@@ -44,7 +47,7 @@ const Cards = props => {
             />
             <p>
               Since there are more possibilities to develop dynamic pages, this
-              is where I roll and wanna take part in App industries.
+              is where I am most interested in.
             </p>
           </div>
         </Col>
@@ -59,8 +62,8 @@ const Cards = props => {
               }}
             />
             <p>
-              Apps are cool. Expo is helping me to build some awesome native
-              apps for Android and Mac.
+              Expo is helping me to build native apps for Android
+              and Mac.  
             </p>
           </div>
         </Col>

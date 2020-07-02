@@ -2,25 +2,15 @@ export default [
   {
     title: "Jamin Rails Project",
     description:
-      "A meetup clone where you you can meet up and plan a jam with other musicians",
+      "A meetup clone where you can plan jamming sessions together with other musicians",
     link: "http://www.jamin.today",
+    technology: ["Rails", "Ruby", "SQL", "JS"],
   },
   {
-    title: "Impala Project",
+    title: "Configurator Project(early stage)",
     description:
-      "A model I made for a race game when I worked with Unity. There is also a WebGl build where you can use it as an configurable object",
-    link: "/unity",
-  },
-  {
-    title: "Impala Project",
-    description:
-      "A model I made for a race game when I worked with Unity. There is also a WebGl build where you can use it as an configurable object",
-    link: "/about",
-  },
-  {
-    title: "Impala Project",
-    description:
-      "A model I made for a race game when I worked with Unity. There is also a WebGl build where you can use it as an configurable object",
-    link: "/about",
+      "A Unity project, with the goal to interactively configure products in a webgl interface.",
+    link: "https://connect.unity.com/mg/other/configurator-car-deploy",
+    technology: ["Unity", "C#", "Maya"],
   },
 ]

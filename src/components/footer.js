@@ -44,11 +44,24 @@ const Footer = props => {
       <div className={footerStyle.disclaimer}>
         <FontAwesomeIcon
           icon={faCopyright}
-          style={{ fontSize: "25px", padding: "3px" }}
+          style={{
+            fontSize: "25px",
+            paddingRight: "5px",
+            margin: "5px 0px",
+            color: "rgba(255, 255, 255, 0.5)",
+          }}
         ></FontAwesomeIcon>
         <p>2020 Florian Gaebler</p>
       </div>
-      <Link to="/impressum" >Impressum | Datenschutz</Link>
+      <Link to="/impressum" style={{ textDecoration: "none" }}>
+        <p
+          style={{
+            textShadow: "0px 0px 2px black",
+          }}
+        >
+          Impressum | Datenschutz
+        </p>
+      </Link>
     </div>
   )
 }

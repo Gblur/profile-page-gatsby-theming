@@ -1,14 +1,14 @@
 # Impressum
 
-### Florian Gaebler
+Florian Gaebler
 
-### Rosenstrasse 12
+Rosenstrasse 12
 
-### 19258 Boizenburg
+19258 Boizenburg
 
-### Telefon: +49 151 / 17688396
+Telefon: +49 151 / 17688396
 
-### E-Mail: floriangaebler87@gmail.com
+E-Mail: floriangaebler87@gmail.com
 
 # Haftung für Inhalte
 

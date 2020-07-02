@@ -1,16 +1,19 @@
 import React from "react"
-import containerStyles from "../styles/container.module.scss"
 
-export default function Container({ children }) {
+const Container = props => {
   return (
     <div
       style={{
-        width: "100%",
-        height: "100%",
+        width: "70%",
+        height: "90%",
+        alignSelf: "center",
+        justifySelf: "center",
       }}
-      className={containerStyles.container}
+      className={props.className}
     >
-      {children}
+      {props.children}
     </div>
   )
 }
+
+export default Container

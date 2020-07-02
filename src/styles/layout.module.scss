@@ -7,6 +7,137 @@
   flex-wrap: wrap;
   padding: 10% 9%;
   z-index: 50;
-  margin: 0px 4%;
-  border-radius: 5px;
+  background-color: var(--color-bg);
+  transition: all 0.5s ease-in-out;
+}
+
+.layoutProfile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-family: "Times New Roman", Times, serif;
+  padding: 1cm;
+  background-color: var(--color-bg);
+}
+
+.leftSide {
+  width: 35%;
+}
+
+.rightSide {
+  width: 40%;
+}
+
+.layoutProfileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 15px 35px;
+  font-family: "Times New Roman", Times, serif;
+  h2 {
+    color: rgb(114, 114, 114);
+  }
+  a {
+    color: rgb(114, 114, 114);
+    font-size: 2em;
+  }
+  p {
+    color: rgb(114, 114, 114);
+    font-size: 1.2em;
+  }
+}
+
+.layoutProfileHeaderRow {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.layoutProfileHeaderIcon {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  border: 2px solid rgb(114, 114, 114);
+  border-radius: 50%;
+}
+
+.layoutProfileContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    color: white;
+    margin-bottom: 1.5em;
+  }
+  h2 {
+    margin-top: 10px;
+    width: 100%;
+    border: 2px solid rgb(114, 114, 114);
+    border-radius: 7px;
+  }
+  h5 {
+    color: #37aae0;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+  }
+}
+
+.layoutProfileContentRow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 4px 0px;
+}
+
+.layoutItem {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: #37aae0;
+  border-radius: 7px;
+}
+.layoutBlockItem {
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  p {
+    font-size: 2em;
+  }
+}
+
+.layoutText {
+  margin-right: 10px;
+}
+
+.layoutProfileFooter {
+  display: flex;
+  position: relative;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+  font-family: "Times New Roman", Times, serif;
+  h2 {
+    color: rgb(114, 114, 114);
+  }
+  a {
+    color: rgb(114, 114, 114);
+  }
+  p {
+    color: rgb(114, 114, 114);
+  }
 }

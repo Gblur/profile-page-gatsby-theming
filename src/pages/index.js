@@ -2,6 +2,8 @@ import React, { useState } from "react"
 //styles
 import "../styles/index.scss"
 import "../styles/layout-grid.scss"
+import "../styles/container.scss"
+import layoutStyle from "../styles/layout.module.scss"
 //components
 import Layout from "../components/layout"
 import LayoutGrid from "../components/layoutGrid"
@@ -10,6 +12,8 @@ import Footer from "../components/footer"
 import ButtonThing from "../components/button"
 import ImageQuery from "../components/image"
 import Cards from "../components/cards"
+import classNames from "classnames"
+import ThemeToggle from "../theme/toggle/index"
 //constants
 import portfolioImages from "../constants/imageData/portfolio.js"
 import svgBannerData from "../constants/svgBannerdata.js"
@@ -31,16 +35,25 @@ export default function Home({ data }) {
   const node = portfolioImages[index]
   const cardInfo = cardModel[index]
 
+  // var classNames = require("classnames")
+
   return (
     <ParallaxProvider>
       <div id="main">
         <ParallaxBanner
           layers={svgBannerData}
           style={{
-            height: "100vh",
+            position: "relative",
+            height: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            padding: "19%",
+            paddingTop: "7%",
+            overflow: "visible",
+            backgroundColor: "var(--color-bg)",
+            zIndex: "150",
+            transition: "all .5s ease-in-out",
           }}
         >
           <div
@@ -49,25 +62,28 @@ export default function Home({ data }) {
               zIndex: "2",
             }}
           >
-            <img src={myLogo} />
-            <h1>Florian Gaebler</h1>
-            <h2>3D, Game and Web Design </h2>
+            <img src={myLogo} style={{ width: "150px" }} />
+            <h2>Florian Gaebler</h2>
+            <h2>3D and Web Design </h2>
 
-            <ButtonThing
+            {/* <ButtonThing
               onClick={() => {
                 document.getElementById("ContainerId").scrollIntoView({
                   behavior: "smooth",
                 })
               }}
-            >
-              Get Started
-            </ButtonThing>
+            > */}
+            {/* Get Started */}
+            {/* </ButtonThing> */}
+            <ThemeToggle />
           </div>
         </ParallaxBanner>
-        <Layout id="ContainerId">
+        <Layout id="ContainerId" className={layoutStyle.layout}>
           <div className="intro">
             <h1>About</h1>
-            <h4></h4>
+            <p>
+              Hi I'm Florian and I'm a junior full stack developer near Hamburg. 
+            </p>
           </div>
           <Cards />
           <div className="filler" style={{ height: "100px" }}></div>
@@ -77,16 +93,22 @@ export default function Home({ data }) {
           <LayoutGrid>
             <div id="image-text">
               <h2>{cardInfo.title}</h2>
-              <h4>{cardInfo.description}</h4>
+              <div style={{ display: "flex" }}>
+                {cardInfo.technology.map(tech => (
+                  <div className="containerTech">
+                    <p>{tech}</p>
+                  </div>
+                ))}
+              </div>
+              <p>{cardInfo.description}</p>
 
               <ButtonThing href={cardInfo.link} target="blank">
-                Go to Project site
+                EXPLORE
               </ButtonThing>
             </div>
             <div className="item-main">
               {node.id === "configVideo" ? (
                 <div
-                  className="item-main"
                   dangerouslySetInnerHTML={{
                     __html: videoMarkdown.markdownRemark.html,
                   }}
@@ -98,21 +120,24 @@ export default function Home({ data }) {
 
             {portfolioImages.map((image, index) => {
               return (
-                <ImageQuery
-                  key={image.id}
-                  className={`item-${index + 1}`}
-                  id={image.image}
-                  src={image.image}
-                  onClick={() => {
-                    document.getElementById("image-text").scrollIntoView({
-                      behavior: "smooth",
-                    })
-                    setIndex(index)
-                  }}
-                />
+                <Container
+                  className={classNames(`containerCard`, `item-${index + 1}`)}
+                >
+                  <ImageQuery
+                    key={image.id}
+                    id={image.image}
+                    src={image.image}
+                    onClick={() => {
+                      setIndex(index)
+                    }}
+                  />
+                </Container>
               )
             })}
           </LayoutGrid>
+          <p>
+            For more content and information, check out the links in the footer
+          </p>
         </Layout>
         <Footer />
       </div>
