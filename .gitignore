@@ -68,8 +68,13 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+#firebase cache
+.firebase
+
 #Folders and personal files
 
 src/pages/contact.js
 src/pages/profile.js
 src/pages/ProfileInfo.md
+src/pages/pngImages
+src/pages/svgImages
