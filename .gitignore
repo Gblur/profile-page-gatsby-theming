@@ -71,3 +71,5 @@ yarn-error.log
 #Folders and personal files
 
 src/pages/contact.js
+src/pages/profile.js
+src/pages/ProfileInfo.md

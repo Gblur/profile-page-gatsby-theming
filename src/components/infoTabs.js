@@ -4,13 +4,9 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 import Container from "react-bootstrap/Container"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faMobileAlt,
-  faCode,
-  faSitemap,
-} from "@fortawesome/free-solid-svg-icons"
+import { faMobileAlt, faCode } from "@fortawesome/free-solid-svg-icons"
 import * as regular from "@fortawesome/free-regular-svg-icons"
-import IconStyle from "../constants/iconstyle.js"
+import IconStyle from "../constants/IconData/iconstyle.js"
 
 const Cards = props => {
   return (
@@ -27,11 +23,9 @@ const Cards = props => {
               }}
             />
             <p>
-              Despite the fact that I graduated as a full stack developer, my
-              priority is in front end development. Mostly with React.
+              I graduated as a full stack developer. Currently my
+              priority lies in front-end development. Mostly with React.
               Javascript and C# are my common used languages.
-
-
             </p>
           </div>
         </Col>
@@ -61,10 +55,7 @@ const Cards = props => {
                 color: IconStyle.color.native,
               }}
             />
-            <p>
-              Expo is helping me to build native apps for Android
-              and Mac.  
-            </p>
+            <p>Expo is helping me to build native apps for Android and Mac.</p>
           </div>
         </Col>
       </Row>

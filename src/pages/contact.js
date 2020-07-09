@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import layoutStyle from "../styles/layout.module.scss"
 //resources
-import profilePic from "../constants/contactImages/Profilepic.jpg"
+import profilePic from "../constants/profileContent/Profilepic.jpg"
 import skillData from "../constants/profileContent/data"
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -11,17 +11,13 @@ import * as brands from "@fortawesome/free-brands-svg-icons"
 import {
   faCircle,
   faGraduationCap,
-  faGamepad,
   faHammer,
   faFlask,
   faLanguage,
   faEnvelope,
   faHome,
   faGlobe,
-  faRocket,
-  faSeedling,
-  faMicrochip,
-  faHeadphones,
+  faPortrait,
 } from "@fortawesome/free-solid-svg-icons"
 import * as regularSvg from "@fortawesome/free-regular-svg-icons"
 import links from "../constants/profileContent/links"
@@ -32,7 +28,7 @@ export default function Contact() {
   }
 
   const FaIcon = icon => {
-    return <FontAwesomeIcon icon={icon} style={{ marginRight: "5px" }} />
+    return <FontAwesomeIcon icon={icon} style={{ margin: "0px 5px" }} />
   }
 
   const skillLevelDisplay = rating => {
@@ -110,6 +106,28 @@ export default function Contact() {
         <div className={layoutStyle.leftSide}>
           <div className={layoutStyle.layoutProfileContent}>
             <h2>
+              {FaIcon(faPortrait)}
+              {headline1("profile")}
+            </h2>
+            <div className={layoutStyle.layoutProfileContentRow}>
+              <ul>
+                <li>
+                  Web developer with a graphics and game design background.
+                </li>
+                <li>
+                  Experienced in project planning and remote collaborations.
+                </li>
+                <li>Interested in web and native app development.</li>
+
+                <li>
+                  OS and Tools: Linux, Git, VS Code, Gatsby, Expo, Android SDK,
+                  Firebase, Figma
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={layoutStyle.layoutProfileContent}>
+            <h2>
               {FaIcon(faHammer)}
               {headline1("work exp")}
             </h2>
@@ -164,6 +182,24 @@ export default function Contact() {
           </div>
           <div className={layoutStyle.layoutProfileContent}>
             <h2>
+              {FaIcon(faLanguage)}
+              {headline1("Languages")}
+            </h2>
+            {Object.entries(skillData.languages).map(([key, value]) => {
+              return (
+                <div className={layoutStyle.layoutProfileContentRow}>
+                  <div className={layoutStyle.layoutItem}>
+                    <p>{key}</p>
+                  </div>
+                  {skillLevelDisplay(value)}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+        <div className={layoutStyle.rightSide}>
+          <div className={layoutStyle.layoutProfileContent}>
+            <h2>
               {FaIcon(faGraduationCap)}
               {headline1("education")}
             </h2>
@@ -200,40 +236,6 @@ export default function Contact() {
               <p> 07/1997 - 07/2005</p>
             </div>
           </div>
-        </div>
-        <div className={layoutStyle.rightSide}>
-          <div className={layoutStyle.layoutProfileContent}>
-            <h2>
-              {FaIcon(faLanguage)}
-              {headline1("Languages")}
-            </h2>
-            {Object.entries(skillData.languages).map(([key, value]) => {
-              return (
-                <div className={layoutStyle.layoutProfileContentRow}>
-                  <div className={layoutStyle.layoutItem}>
-                    <p>{key}</p>
-                  </div>
-                  {skillLevelDisplay(value)}
-                </div>
-              )
-            })}
-          </div>
-          <div className={layoutStyle.layoutProfileContent}>
-            <h2>
-              {FaIcon(faFlask)}
-              {headline1("Skills")}
-            </h2>
-            {Object.entries(skillData.software).map(([key, value]) => {
-              return (
-                <div className={layoutStyle.layoutProfileContentRow}>
-                  <div className={layoutStyle.layoutItem}>
-                    <p>{key}</p>
-                  </div>
-                  {skillLevelDisplay(value)}
-                </div>
-              )
-            })}
-          </div>
           <div className={layoutStyle.layoutProfileContent}>
             <h2>
               {FaIcon(faGraduationCap)}
@@ -266,23 +268,19 @@ export default function Contact() {
           </div>
           <div className={layoutStyle.layoutProfileContent}>
             <h2>
-              {FaIcon(faRocket)}
-              {headline1("interests")}
+              {FaIcon(faFlask)}
+              {headline1("Skills")}
             </h2>
-            <div className={layoutStyle.layoutProfileContentRow}>
-              <div className={layoutStyle.layoutBlockItem}>
-                <h5>Sustainability</h5>
-                <p>{FaIcon(faSeedling)}</p>
-              </div>
-              <div className={layoutStyle.layoutBlockItem}>
-                <h5>Technology</h5>
-                <p>{FaIcon(faMicrochip)}</p>
-              </div>
-              <div className={layoutStyle.layoutBlockItem}>
-                <h5>Music</h5>
-                <p>{FaIcon(faHeadphones)}</p>
-              </div>
-            </div>
+            {Object.entries(skillData.software).map(([key, value]) => {
+              return (
+                <div className={layoutStyle.layoutProfileContentRow}>
+                  <div className={layoutStyle.layoutItem}>
+                    <p>{key}</p>
+                  </div>
+                  {skillLevelDisplay(value)}
+                </div>
+              )
+            })}
           </div>
         </div>
       </Layout>

@@ -1,6 +1,4 @@
 import React from "react"
-import Img from "gatsby-image"
-import Container from "./container"
 
 const ImagesQuery = props => {
   return (

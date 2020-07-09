@@ -1,10 +1,10 @@
 const skillData = {
   software: {
-    Unity: "4",
-    React: "3",
-    Rails: "3",
-    JS: "3",
-    Ruby: "3",
+    "Unity 3D, C#": "4",
+    "HTML, SCSS, Bootstrap": "4",
+    "React 'n Native, Rails, JS, Ruby": "3",
+    "SQL, JSON, AJAX": "3",
+    TypeScript: "2",
   },
   languages: {
     English: "4",

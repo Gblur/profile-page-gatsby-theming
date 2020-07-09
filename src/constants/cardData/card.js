@@ -9,7 +9,7 @@ export default [
   {
     title: "Configurator Project(early stage)",
     description:
-      "A Unity project, with the goal to interactively configure products in a webgl interface.",
+      "A Unity project, with the goal to interactively configure products on a webgl interface.",
     link: "https://connect.unity.com/mg/other/configurator-car-deploy",
     technology: ["Unity", "C#", "Maya"],
   },

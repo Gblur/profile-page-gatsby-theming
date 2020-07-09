@@ -11,21 +11,20 @@ import Container from "../components/container"
 import Footer from "../components/footer"
 import ButtonThing from "../components/button"
 import ImageQuery from "../components/image"
-import Cards from "../components/cards"
+import Cards from "../components/infoTabs"
 import classNames from "classnames"
 import ThemeToggle from "../theme/toggle/index"
 //constants
-import portfolioImages from "../constants/imageData/portfolio.js"
-import svgBannerData from "../constants/svgBannerdata.js"
+import portfolioImages from "../constants/cardData/portfolio.js"
+import svgBannerData from "../constants/bannerdata/svgBannerdata.js"
 //query
 import { graphql } from "gatsby"
 //banner
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax"
 import myLogo from "../svgImages/Logo_optimized.svg"
 //data
-import cardModel from "../models/card"
+import cardModel from "../constants/cardData/card"
 //bootstrap
-import Button from "react-bootstrap/Button"
 
 export default function Home({ data }) {
   const [index, setIndex] = useState(0)
